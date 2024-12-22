@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../provider/AuthContext';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
 
-    const {loginUser} = useContext(AuthContext)
+    const {loginUser,  signInWithGoogle} = useContext(AuthContext)
     
     const handleLogin = e =>{
         e.preventDefault();
@@ -19,7 +20,22 @@ const Login = () => {
         .catch(error =>{
             console.log(error);
         } )
+
+     
     }
+
+    const handleGoogleSignIn = () =>{
+        signInWithGoogle()
+        .then(result =>{
+            console.log(result.user);
+        })
+        .catch(error =>{
+          console.log(error.message);  
+        })
+    }
+
+        
+    
     return (
         <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
@@ -46,6 +62,7 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
+              <button onClick={handleGoogleSignIn} className="btn"><FaGoogle/> Login With Google</button>
             </form>
           </div>
         </div>

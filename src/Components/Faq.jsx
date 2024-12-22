@@ -2,7 +2,7 @@ import React from 'react';
 
 const Faq = () => {
     return (
-        <div className='flex gap-5 my-7'>
+        <div className='flex gap-7 my-7'>
             <div>
                <div>
                <h3 className='text-2xl font-bold'>1. What is Assignment ?</h3>
