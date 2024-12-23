@@ -7,6 +7,7 @@ import Register from "../Pages/Home/Register/Register";
 import Login from "../Pages/Login/Login";
 import CreateAssignment from "../Pages/Create/CreateAssignment";
 import PrivetRoute from "./PrivetRoute";
+import AssignmentPage from "../Pages/Assignment/AssignmentPage";
 
 
   const router = createBrowserRouter([
@@ -34,6 +35,11 @@ import PrivetRoute from "./PrivetRoute";
             <CreateAssignment></CreateAssignment>
           </PrivetRoute>
 
+        },
+        {
+          path: 'assignPage',
+          element: <AssignmentPage></AssignmentPage>
+          
         }
       ]
     },
