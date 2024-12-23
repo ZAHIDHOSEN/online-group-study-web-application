@@ -9,6 +9,8 @@ import CreateAssignment from "../Pages/Create/CreateAssignment";
 import PrivetRoute from "./PrivetRoute";
 import AssignmentPage from "../Pages/Assignment/AssignmentPage";
 import Details from "../Pages/Details/Details";
+import AssignmentSub from "../Pages/Submited/AssignmentSub";
+import MySubmission from "../Pages/MySubmission/MySubmission";
 
 
   const router = createBrowserRouter([
@@ -48,7 +50,20 @@ import Details from "../Pages/Details/Details";
             <Details></Details>
           </PrivetRoute>,
           loader: ({params}) => fetch(`http://localhost:5000/assignments/${params.id}`)
+        },
+        {
+          path: 'submission/:id',
+          element:<PrivetRoute>
+            <AssignmentSub></AssignmentSub>
+          </PrivetRoute>
+        },
+        {
+          path: 'mySubmission',
+          element:<PrivetRoute>
+            <MySubmission></MySubmission>
+          </PrivetRoute>
         }
+
       ]
     },
   ]);

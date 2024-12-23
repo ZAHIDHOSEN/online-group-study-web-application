@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Details = () => {
     const details = useLoaderData();
@@ -13,6 +13,9 @@ const Details = () => {
             <p>Marks: {marks}</p>
             <p>Assignment defficulty level: {assignment_difficulty_level}</p>
             <p>{description}</p>
+            <Link to={`/submission/${_id}`}>
+            <button className='btn btn-outline mt-2'>Take Assignment</button>
+            </Link>
 
             
         </div>
