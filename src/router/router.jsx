@@ -8,6 +8,7 @@ import Login from "../Pages/Login/Login";
 import CreateAssignment from "../Pages/Create/CreateAssignment";
 import PrivetRoute from "./PrivetRoute";
 import AssignmentPage from "../Pages/Assignment/AssignmentPage";
+import Details from "../Pages/Details/Details";
 
 
   const router = createBrowserRouter([
@@ -40,6 +41,13 @@ import AssignmentPage from "../Pages/Assignment/AssignmentPage";
           path: 'assignPage',
           element: <AssignmentPage></AssignmentPage>
           
+        },
+        {
+          path: 'assignments/:id',
+          element: <PrivetRoute>
+            <Details></Details>
+          </PrivetRoute>,
+          loader: ({params}) => fetch(`http://localhost:5000/assignments/${params.id}`)
         }
       ]
     },
