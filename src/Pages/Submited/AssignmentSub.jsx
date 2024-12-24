@@ -35,7 +35,7 @@ const AssignmentSub = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            navigate('/')
+            navigate('/mySubmission')
         })
 
     }
