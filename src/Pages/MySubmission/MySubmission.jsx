@@ -1,16 +1,35 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../provider/AuthContext';
+import axios from 'axios';
+import UseAxiosSecure from '../../Components/hooks/UseAxiosSecure';
 
 const MySubmission = () => {
     const {user} = useContext(AuthContext)
     const [assignments, setAssignments] =useState([])
 
+    const axiosSecure = UseAxiosSecure();
+
     useEffect(()=>{
-        fetch(`http://localhost:5000/assignment-submission?email=${user.email}`)
-        .then(res =>res.json())
-        .then(data =>{
-            setAssignments(data);
-        })
+
+
+        // fetch(`http://localhost:5000/assignment-submission?email=${user.email}`)
+        // .then(res =>res.json())
+        // .then(data =>{
+        //     setAssignments(data);
+        // })
+
+
+        // axios.get(`http://localhost:5000}`,{
+        //   withCredentials: true
+        // })
+        // .then(res => setAssignments(res.data))
+
+        axiosSecure.get(`/assignment-submission?email=${user.email}`)
+        .then(res => setAssignments(res.data))
+
+        
+
+
     },[user.email])
     return (
         <div>

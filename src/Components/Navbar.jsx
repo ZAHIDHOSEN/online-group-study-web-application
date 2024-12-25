@@ -64,11 +64,14 @@ const Navbar = () => {
         <div className="navbar-end">
           {
             user?  <>
-            <button onClick={handleLogout} className='btn'>logout</button>
+          
+            
+          <button onClick={handleLogout} className='btn'>logout</button>
+          
 
 
             </> : <>
-            <Link to="/register">Register</Link>
+            
             <Link to='/login'><button className='btn'>login</button> </Link>
             </>
           }
