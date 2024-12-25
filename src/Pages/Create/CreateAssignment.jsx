@@ -13,7 +13,7 @@ const CreateAssignment = () => {
 
         console.log(currentData)
 
-        fetch('http://localhost:5000/assignments',{
+        fetch('https://assignment-11-server-pi-seven.vercel.app/assignments',{
 
             method: 'POST',
             headers:{

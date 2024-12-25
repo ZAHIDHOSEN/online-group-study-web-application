@@ -20,8 +20,10 @@ const AssignmentCard = ({assignment}) => {
       }).then((result) => {
         if (result.isConfirmed) {
          
-          fetch(`http://localhost:5000/assignments/${_id}`,{
+          fetch(`https://assignment-11-server-pi-seven.vercel.app/assignments/${_id}`,{
             method: 'DELETE',
+
+      
        
 
           })

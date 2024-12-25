@@ -25,7 +25,7 @@ const AssignmentSub = () => {
 
 
         }
-        fetch('http://localhost:5000/assignment-submission',{
+        fetch('https://assignment-11-server-pi-seven.vercel.app/assignment-submission',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

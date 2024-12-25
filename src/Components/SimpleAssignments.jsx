@@ -6,7 +6,7 @@ const SimpleAssignments = () => {
     const [assignments, setAssignments] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/assignments')
+        fetch('https://assignment-11-server-pi-seven.vercel.app/assignments')
         .then(res =>res.json())
         .then(data => setAssignments(data))
 

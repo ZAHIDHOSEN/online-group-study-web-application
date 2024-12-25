@@ -50,7 +50,7 @@ import Update from "../Pages/Update/Update";
           element: <PrivetRoute>
             <Details></Details>
           </PrivetRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/assignments/${params.id}`)
+          loader: ({params}) => fetch(`https://assignment-11-server-pi-seven.vercel.app/assignments/${params.id}`)
         },
         {
           path: 'submission/:id',
@@ -69,7 +69,7 @@ import Update from "../Pages/Update/Update";
           element:<PrivetRoute>
              <Update></Update>
           </PrivetRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/assignments/${params.id}`)
+          loader: ({params}) => fetch(`https://assignment-11-server-pi-seven.vercel.app/assignments/${params.id}`)
         }
 
       ]

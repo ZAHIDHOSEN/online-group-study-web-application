@@ -12,14 +12,14 @@ const MySubmission = () => {
     useEffect(()=>{
 
 
-        // fetch(`http://localhost:5000/assignment-submission?email=${user.email}`)
+        // fetch(`https://assignment-11-server-pi-seven.vercel.app/assignment-submission?email=${user.email}`)
         // .then(res =>res.json())
         // .then(data =>{
         //     setAssignments(data);
         // })
 
 
-        // axios.get(`http://localhost:5000}`,{
+        // axios.get(`https://assignment-11-server-pi-seven.vercel.app}`,{
         //   withCredentials: true
         // })
         // .then(res => setAssignments(res.data))

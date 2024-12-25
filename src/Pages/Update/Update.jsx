@@ -17,7 +17,7 @@ const Update = () => {
     
             console.log(updateData)
     
-            fetch((`http://localhost:5000/assignments/${_id}`),{
+            fetch((`https://assignment-11-server-pi-seven.vercel.app/assignments/${_id}`),{
     
                 method: 'PUT',
                 headers:{
