@@ -33,6 +33,7 @@ const Login = () => {
         signInWithGoogle()
         .then(result =>{
             console.log(result.user);
+            navigate(form)
             
         })
         .catch(error =>{
@@ -59,7 +60,7 @@ const Login = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
                 <label className="label">
                   <p>You are new user.please <Link className='text-red-500' to='/register'>Register</Link></p>
              

@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import AuthContext from '../../provider/AuthContext';
 
 const CreateAssignment = () => {
+  const {user} = useContext(AuthContext);
     const navigate = useNavigate();
+    const [selectedDate, setSelectedDate] = useState(null)
 
     const handleCreate = e =>{
         e.preventDefault()
 
         const formData = new FormData(e.target);
         const currentData = Object.fromEntries(formData.entries())
-
+        if(user){
+          currentData.createdBy = user.email
+        }
+        
+        currentData.date = selectedDate ? selectedDate.toISOString() : null;
         console.log(currentData)
 
         fetch('https://assignment-11-server-pi-seven.vercel.app/assignments',{
@@ -67,6 +76,7 @@ const CreateAssignment = () => {
           <input type="url" name='thumbnail_image_url' placeholder="thumbnail image url" className="input input-bordered" required />
        
         </div>
+        <div className='flex gap-10'>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Assignment Difficulty level</span>
@@ -80,6 +90,27 @@ const CreateAssignment = () => {
        
        
         </div>
+
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Date</span>
+          </label>
+          
+          <DatePicker
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
+          minDate={new Date()}
+          className="input input-bordered"
+          placeholderText="select a date"
+          
+
+         >
+
+          </DatePicker>
+         
+        </div>
+        </div>
+       
 
         <div className="form-control mt-6">
           <button className="btn btn-primary">Create</button>
