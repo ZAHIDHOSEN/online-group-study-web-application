@@ -63,12 +63,13 @@ const AssignmentCard = ({ assignment }) => {
     <div className="card card-compact bg-base-100 shadow-xl">
       <div className="flex items-center">
         <figure>
-          <img src={thumbnail_image_url} alt="Assignment" />
+          <img className='h-44 w-80' src={thumbnail_image_url} alt="Assignment" />
         </figure>
-        <h3 className="text-2xl">{title}</h3>
+       
       </div>
 
       <div className="card-body">
+      <h3 className="text-2xl">{title}</h3>
         <h2 className="card-title">Marks: {marks}</h2>
         <p>Level: {assignment_difficulty_level}</p>
         <div className="flex gap-1">
@@ -78,11 +79,11 @@ const AssignmentCard = ({ assignment }) => {
             </button>
           )}
 
-          {isCreator && (
+          { 
             <Link to={`/update/${_id}`}>
               <button className="btn bg-green-500 text-black">Update</button>
             </Link>
-          )}
+          }
 
           <Link to={`/assignments/${_id}`}>
             <button className="btn btn-primary">View details</button>

@@ -25,7 +25,7 @@ const AuthProvider = ({children}) => {
 
    const signInWithGoogle = () =>{
         setLoading(true)
-        signInWithPopup(auth, googleProvider)
+      return signInWithPopup(auth, googleProvider)
 
     }
 
@@ -37,12 +37,14 @@ const AuthProvider = ({children}) => {
 
 
     useEffect(() =>{
+        // setLoading(true);
        const unSubscribe = onAuthStateChanged(auth, currentUser=>{
            setUser(currentUser);
            console.log('state capture', currentUser?.email);
 
            if(currentUser?.email){
             const user = {email: currentUser.email}
+            // setLoading(false)
 
             axios.post('https://assignment-11-server-pi-seven.vercel.app/jwt',user,{
                 withCredentials:true
@@ -54,6 +56,7 @@ const AuthProvider = ({children}) => {
             })
            }
            else{
+            // setLoading(false);
 
             axios.post('https://assignment-11-server-pi-seven.vercel.app/logout', {}, {
                 withCredentials:true

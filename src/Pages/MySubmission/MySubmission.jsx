@@ -12,17 +12,7 @@ const MySubmission = () => {
     useEffect(()=>{
 
 
-        // fetch(`https://assignment-11-server-pi-seven.vercel.app/assignment-submission?email=${user.email}`)
-        // .then(res =>res.json())
-        // .then(data =>{
-        //     setAssignments(data);
-        // })
 
-
-        // axios.get(`https://assignment-11-server-pi-seven.vercel.app}`,{
-        //   withCredentials: true
-        // })
-        // .then(res => setAssignments(res.data))
 
         axiosSecure.get(`/assignment-submission?email=${user.email}`)
         .then(res => setAssignments(res.data))
@@ -30,7 +20,7 @@ const MySubmission = () => {
         
 
 
-    },[user.email])
+    },[user, axiosSecure])
     return (
         <div>
          <h3>My Submission: {assignments.length}</h3>
@@ -39,14 +29,9 @@ const MySubmission = () => {
     {/* head */}
     <thead>
       <tr>
-        <th>
-          <label>
-            <input type="checkbox" className="checkbox" />
-          </label>
-        </th>
         <th>Assignment-logo</th>
         <th>Difficulty level</th>
-        <th>Favorite Color</th>
+        <th>Assignment-marks</th>
         <th></th>
       </tr>
     </thead>
@@ -54,12 +39,8 @@ const MySubmission = () => {
       {/* row 1 */}
 
       {
-        assignments.map(assignment =>     <tr key={assignment._id}>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
+        assignments.map(assignment => <tr key={assignment._id}>
+          {console.log(assignment)}
             <td>
               <div className="flex items-center gap-3">
                 <div className="avatar">
@@ -71,7 +52,7 @@ const MySubmission = () => {
                 </div>
                 <div>
                   <div className="font-bold">{assignment.title}</div>
-                  <div className="text-sm opacity-50">{assignment.marks}</div>
+                 
                 </div>
               </div>
             </td>
@@ -80,9 +61,11 @@ const MySubmission = () => {
               <br />
               <span className="badge badge-ghost badge-sm">{assignment.assignment_difficulty_level}</span>
             </td>
-            <td>Purple</td>
+            <td>
+            {assignment.marks || "No marks"}
+            </td>
             <th>
-              <button className="btn btn-ghost btn-xs">details</button>
+             
             </th>
           </tr>)
       }
@@ -98,3 +81,9 @@ const MySubmission = () => {
 };
 
 export default MySubmission;
+
+
+
+
+
+

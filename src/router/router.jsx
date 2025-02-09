@@ -12,6 +12,7 @@ import Details from "../Pages/Details/Details";
 import AssignmentSub from "../Pages/Submited/AssignmentSub";
 import MySubmission from "../Pages/MySubmission/MySubmission";
 import Update from "../Pages/Update/Update";
+import Pending from "../Pages/Pending/Pending";
 
 
   const router = createBrowserRouter([
@@ -70,6 +71,10 @@ import Update from "../Pages/Update/Update";
              <Update></Update>
           </PrivetRoute>,
           loader: ({params}) => fetch(`https://assignment-11-server-pi-seven.vercel.app/assignments/${params.id}`)
+        },
+        {
+          path: 'pending',
+          element: <PrivetRoute><Pending></Pending></PrivetRoute>
         }
 
       ]

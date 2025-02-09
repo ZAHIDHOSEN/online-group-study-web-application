@@ -43,6 +43,7 @@ const Navbar = () => {
          <li><NavLink to='/assignPage'>Assignment page</NavLink></li>
         <li><NavLink to='/createAssign'>Create Assignment</NavLink></li>
         <li><NavLink to='/mySubmission'>My submission</NavLink></li>
+        <li><NavLink to='/pending'>Pending Assignment</NavLink></li>
 
       </> :<>
        <li><NavLink to='/'>Home</NavLink></li>
@@ -93,12 +94,11 @@ const Navbar = () => {
         </div>
         <div className="navbar-end gap-5">
           <label className="swap swap-rotate">
-  {/* this hidden checkbox controls the state */}
-  <input
-   onChange={handleToggle} type="checkbox" />
+     
+         <input
+       onChange={handleToggle} type="checkbox" />
 
-  {/* sun icon */}
-  <svg
+        <svg
     className="swap-on h-10 w-10 fill-current"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
