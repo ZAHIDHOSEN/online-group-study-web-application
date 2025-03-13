@@ -8,7 +8,9 @@ const AssignmentPage = () => {
        <div className='my-5'>
        <AssignmentBanner></AssignmentBanner>
        </div>
+        <div className='max-w-7xl mx-auto'>
         <SimpleAssignments></SimpleAssignments>
+        </div>
         </div>
     );
 };

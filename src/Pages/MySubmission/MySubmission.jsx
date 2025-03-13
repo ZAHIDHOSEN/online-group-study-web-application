@@ -40,7 +40,7 @@ const MySubmission = () => {
 
       {
         assignments.map(assignment => <tr key={assignment._id}>
-          {console.log(assignment)}
+          {/* {console.log(assignment)} */}
             <td>
               <div className="flex items-center gap-3">
                 <div className="avatar">
