@@ -5,7 +5,7 @@ const AssignmentBanner = () => {
         <div
         className="hero min-h-screen"
         style={{
-          backgroundImage: "url(https://i.postimg.cc/gkDKxHyY/49159474-9183034.jpg)",
+          backgroundImage: "url(https://i.postimg.cc/k5DbJZ0X/20824724-6373884.jpg)",
         }}>
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center">

@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../assets/Assignment-logo.png'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -14,24 +15,29 @@ const Footer = () => {
           </p>
         </aside>
         <nav>
-          <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <h6 className="footer-title">About Us</h6>
+          <li>Collaborative Learning Platform</li>
+          <li>Easy Assignment Management</li>
+          <li>Secure & User-Friendly</li>
+         
+        
         </nav>
         <nav>
-          <h6 className="footer-title">Company</h6>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <h6 className="footer-title">Contact Us</h6>
+          <li><a href="https://mail.google.com/mail">zahidhosen203@gmail.com</a></li>
+          <li>8801793397830</li>
+          <li>Whats Up</li>
+          
+         
         </nav>
         <nav>
-          <h6 className="footer-title">Legal</h6>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
+          <h6 className="footer-title">Links</h6>
+         <li><Link to={`/`}>Home</Link></li> 
+         <li> <Link to={`/assignPage`}>Assignment Page</Link></li>
+         <li><Link to={`/createAssign`}>Create Assignment</Link></li>
+          
+          
+       
         </nav>
       </footer>
     );

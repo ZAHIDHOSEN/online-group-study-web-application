@@ -47,7 +47,7 @@ const CreateAssignment = () => {
     }
     return (
         <div>
-            <h3 className='text-3xl font-bold'>create assignment</h3>
+            <h3 className='text-3xl font-bold text-center mt-3'>Create Assignment</h3>
             <form onSubmit={handleCreate} className="card-body">
         <div className="form-control">
           <label className="label">

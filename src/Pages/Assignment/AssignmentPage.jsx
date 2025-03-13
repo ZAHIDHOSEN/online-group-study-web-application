@@ -8,7 +8,7 @@ const AssignmentPage = () => {
        <div className='my-5'>
        <AssignmentBanner></AssignmentBanner>
        </div>
-        <div className='max-w-7xl mx-auto'>
+        <div className='max-w-7xl mx-auto mb-5'>
         <SimpleAssignments></SimpleAssignments>
         </div>
         </div>
