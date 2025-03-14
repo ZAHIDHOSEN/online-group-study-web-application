@@ -22,7 +22,7 @@ const CreateAssignment = () => {
         currentData.date = selectedDate ? selectedDate.toISOString() : null;
         console.log(currentData)
 
-        fetch('https://assignment-11-server-pi-seven.vercel.app/assignments',{
+        fetch('https://assignment-11-server-3njj8ptaf-zahid123s-projects.vercel.app/assignments',{
 
             method: 'POST',
             headers:{

@@ -39,7 +39,7 @@ const AssignmentCard = ({ assignment }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://assignment-11-server-pi-seven.vercel.app/assignments/${_id}?email=${user.email}`, {
+        fetch(`https://assignment-11-server-3njj8ptaf-zahid123s-projects.vercel.app/assignments/${_id}?email=${user.email}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -46,7 +46,7 @@ const AuthProvider = ({children}) => {
             const user = {email: currentUser.email}
             // setLoading(false)
 
-            axios.post('https://assignment-11-server-pi-seven.vercel.app/jwt',user,{
+            axios.post('https://assignment-11-server-3njj8ptaf-zahid123s-projects.vercel.app/jwt',user,{
                 withCredentials:true
             })
             .then(res => {
@@ -58,7 +58,7 @@ const AuthProvider = ({children}) => {
            else{
             // setLoading(false);
 
-            axios.post('https://assignment-11-server-pi-seven.vercel.app/logout', {}, {
+            axios.post('https://assignment-11-server-3njj8ptaf-zahid123s-projects.vercel.app/logout', {}, {
                 withCredentials:true
 
             })

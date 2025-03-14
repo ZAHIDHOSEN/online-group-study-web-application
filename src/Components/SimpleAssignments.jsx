@@ -6,7 +6,7 @@ const SimpleAssignments = () => {
     const [assignments, setAssignments] = useState([])
 
     useEffect(()=>{
-        fetch('https://assignment-11-server-pi-seven.vercel.app/assignments')
+        fetch('https://assignment-11-server-3njj8ptaf-zahid123s-projects.vercel.app/assignments')
         .then(res =>res.json())
         .then(data => setAssignments(data))
 
