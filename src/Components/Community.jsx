@@ -5,7 +5,7 @@ const Community = () => {
     const [message,setMessage] = useState([])
 
     useEffect(()=>{
-        axios.get(`http://localhost:5000/community`)
+        axios.get(`https://assignment-11-server-pi-seven.vercel.app/community`)
         .then(res =>setMessage(res.data))
         .catch(err => console.log('data not fetch',err))
     },[])
