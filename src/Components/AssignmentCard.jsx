@@ -62,8 +62,8 @@ const AssignmentCard = ({ assignment }) => {
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
       <div className="flex items-center">
-        <figure>
-          <img className='h-44 w-80' src={thumbnail_image_url} alt="Assignment" />
+        <figure className='m-4 border rounded-xl'>
+          <img className='h-44 w-80 ' src={thumbnail_image_url} alt="Assignment" />
         </figure>
        
       </div>
